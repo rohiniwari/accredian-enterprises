@@ -2,7 +2,7 @@
 
 A production-grade Next.js implementation of the [Accredian Enterprise](https://enterprise.accredian.com/) website, built as part of a Full Stack Developer Intern assignment.
 
-**Live Demo:** [https://accredian-enterprise.vercel.app](https://accredian-enterprise.vercel.app)  
+**Live Demo:** [https://accredian-enterprise.vercel.app](https://accredian-enterprises-gules.vercel.app/)  
 **Tech Stack:** Next.js 16 (App Router + Turbopack) · React 19 · TypeScript · Tailwind CSS · Next.js API Routes
 
 ---
