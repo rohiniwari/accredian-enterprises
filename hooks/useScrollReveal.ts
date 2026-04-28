@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, RefObject } from 'react'
 
-export function useScrollReveal(ref: RefObject<HTMLElement>, options?: IntersectionObserverInit) {
+export function useScrollReveal(ref: RefObject<HTMLElement | null>, options?: IntersectionObserverInit) {
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) {
-    ref.current?.querySelectorAll('.section-fade').forEach((el: Element) => el.classList.add('visible'))
+      ref.current?.querySelectorAll('.section-fade').forEach((el: Element) => el.classList.add('visible'))
       return
     }
 
@@ -18,7 +18,7 @@ export function useScrollReveal(ref: RefObject<HTMLElement>, options?: Intersect
   }, [ref, options])
 }
 
-export function useScrollRevealOnce(ref: RefObject<HTMLElement>, callback?: () => void, threshold = 0.2) {
+export function useScrollRevealOnce(ref: RefObject<HTMLElement | null>, callback?: () => void, threshold = 0.2) {
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) {
@@ -41,4 +41,3 @@ export function useScrollRevealOnce(ref: RefObject<HTMLElement>, callback?: () =
     return () => observer.disconnect()
   }, [ref, callback, threshold])
 }
-
